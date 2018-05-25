@@ -8,6 +8,39 @@
 # Prepare dos graficas con la solucion: de x vs y (xy.png), x vs. z (xz.png) 
 
 
+import numpy as np
+
+sig=10
+bet=2.67
+rho=28
+n=1000
+dt=5.0/n
+
+
+
+def avan(r):
+    rt=r
+    dx=(sig*(r[1]-r[0]))
+    dy=(rho*r[0])-r[1]-(r[0]*r[2])
+    dz=(-bet*r[2])+(r[0]*r[1])
+    rt[0]=rt[0]+(dt*dx)
+    rt[1]=rt[1]+(dt*dy)
+    rt[2]=rt[2]+(dt*dz)
+    return rt
+
+x=[0.0]
+y=[0.0]
+z=[0.0]
+rt=[x,y,z]
+
+for i in range(int(n)):
+    rt=avan(rt)
+    x.append(rt[0])
+    y.append(rt[1])
+    z.append(rt[2])
+
+print (x)
+
 
 
 
