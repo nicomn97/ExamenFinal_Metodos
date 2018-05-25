@@ -10,6 +10,11 @@
 
 import numpy as np
 
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 sig=10
 bet=2.67
 rho=28
@@ -31,7 +36,7 @@ def avan(r):
 x=[0.0]
 y=[0.0]
 z=[0.0]
-rt=[x,y,z]
+rt=[x[0],y[0],z[0]]
 
 for i in range(int(n)):
     rt=avan(rt)
@@ -39,10 +44,23 @@ for i in range(int(n)):
     y.append(rt[1])
     z.append(rt[2])
 
-print (x)
 
 
+plt.figure()
+plt.scatter(y,x, label="x")
+plt.xlabel("y")
+plt.ylabel("x")
+plt.title("x vs. y")
+plt.legend()
+plt.savefig("xy.png")
 
+plt.figure()
+plt.scatter(y,x, label="x")
+plt.xlabel("z")
+plt.ylabel("x")
+plt.title("x vs. z")
+plt.legend()
+plt.savefig("xz.png")
 
 
 
