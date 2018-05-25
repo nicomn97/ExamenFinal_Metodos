@@ -33,9 +33,9 @@ def avan(r):
     rt[2]=rt[2]+(dt*dz)
     return rt
 
-x=[1.0]
-y=[2.0]
-z=[3.0]
+x=[0.0]
+y=[0.0]
+z=[0.0]
 rt=[x[0],y[0],z[0]]
 
 for i in range(int(n)):
@@ -55,7 +55,7 @@ plt.legend()
 plt.savefig("xy.png")
 
 plt.figure()
-plt.scatter(y,x, label="x")
+plt.scatter(z,x, label="x")
 plt.xlabel("z")
 plt.ylabel("x")
 plt.title("x vs. z")
