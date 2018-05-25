@@ -15,7 +15,7 @@ dx=x[1]-x[0]
 d=(fx[2:]-fx[:-2])/(dx*dx)
 
 plt.figure()
-plt.scatter(d,x[1:-1], label="derivada")
+plt.scatter(x[1:-1],d, label="derivada")
 plt.xlabel("x")
 plt.ylabel("derivada")
 plt.title("Derivada de f(x)")
